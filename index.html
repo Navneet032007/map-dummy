@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Impactful Maps</title>
+
+    <link href="https://unpkg.com/maplibre-gl@3.6.0/dist/maplibre-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔍 TOP SEARCH BAR -->
+<div id="top-bar">
+    <input
+        type="text"
+        placeholder="Where you wanna rock and roll today?"
+        disabled
+    >
+    <div id="categories">
+        <button>🍽️ Restaurants</button>
+        <button>🏨 Hotels</button>
+        <button>🏥 Pharmacies</button>
+        <button>🏧 ATMs</button>
+        <button>🚌 Transit</button>
+    </div>
+</div>
+
+<!-- 🧭 SIDEBAR -->
+<div id="info-panel" class="hidden">
+    <button id="close-panel">✖</button>
+
+    <h2>Route Details</h2>
+    <p id="context-banner"></p>
+
+    <p id="start-info"><strong>Start:</strong> --</p>
+    <p id="end-info"><strong>End:</strong> --</p>
+
+    <label>Travel Mode</label>
+    <select id="mode">
+        <option value="car">🚗 Car</option>
+        <option value="bike">🏍️ Bike</option>
+    </select>
+
+    <label>User Context</label>
+    <select id="user-context">
+        <option value="normal">Normal</option>
+        <option value="emergency">🚑 Emergency</option>
+        <option value="late-night">🌙 Late Night</option>
+        <option value="delivery">📦 Delivery</option>
+    </select>
+
+    <label>Route Preference</label>
+    <div id="route-toggle">
+        <button id="fastest-btn" class="active">⚡ Fastest</button>
+        <button id="impactful-btn">⭐ Impactful</button>
+    </div>
+
+    <p id="impact-score" class="hidden"></p>
+
+    <div id="distance-time">
+        <p id="distance">Distance: --</p>
+        <p id="time">Time: --</p>
+    </div>
+
+    <h3>Nearby Context</h3>
+    <ul id="landmarks"></ul>
+
+    <h3>Area View</h3>
+    <div id="photos">
+        <img id="photo1" alt="Area image 1">
+        <img id="photo2" alt="Area image 2">
+    </div>
+</div>
+
+<!-- 🗺️ MAP -->
+<div id="map"></div>
+
+<script src="https://unpkg.com/maplibre-gl@3.6.0/dist/maplibre-gl.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
